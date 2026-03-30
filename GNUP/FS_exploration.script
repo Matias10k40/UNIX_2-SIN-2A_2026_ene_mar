@@ -5,4 +5,21 @@ sudo apt update
 sudo apt upgrade
 
 # Install parted tool for disk partition management
-sudo apt install parted 
+sudo apt install parted
+
+# Display partitions and filesystems with separators
+sudo parted -l && echo -e "\n---\n" && lsblk -f && echo -e "\n---\n"
+
+# List all disk partitions with parted
+sudo parted -l
+
+# List block devices with filesystem information
+lsblk -f
+
+# List all mounted filesystems
+mount | grep
+
+# Check if system uses UEFI or BIOS
+[ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS"
+
+
