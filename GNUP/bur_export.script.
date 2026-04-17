@@ -24,3 +24,12 @@ ls -l
 #ls=List
 #--type of file
 #symbolich link 
+
+# Give execution permission to user, group, and others for script.sh
+chmod +x script.sh 
+# Give execution permission to the file owner only for script.sh
+chmod u+x script.sh
+# Remove read permission for others on secreto.txt
+chmod o-r secreto.txt
+# Give owner read/write and remove all permissions for group and others on privado
+chmod u+rw,go-rwx privado 
