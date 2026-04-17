@@ -12,3 +12,7 @@ ls -lah
 mkdir -- -rf
 # Remove the directory named "-rf" by ending option parsing with --
 rmdir -- -rf
+# Show help information for the ls command
+ls --help
+# Display the manual page for ls
+man ls 
