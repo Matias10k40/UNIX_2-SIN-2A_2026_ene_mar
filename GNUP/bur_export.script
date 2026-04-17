@@ -1,0 +1,10 @@
+# List all files, including hidden ones
+ls -a 
+# List all files, including hidden ones (long option)
+ls --all
+# List all files with details, hidden files, and human-readable sizes
+ls -l -a -h 
+# List all files with details and hidden files (short form)
+ls -l -ah 
+# List all files with details and hidden files (compact form)
+ls -lah 
