@@ -30,3 +30,9 @@ cat hola.sh
 
 # Executes the hola.sh script.
 ./hola.sh
+
+# Shows file details for hola.sh, including permissions and size.
+ls -l hola.sh
+
+# Makes hola.sh executable so it can be run directly.
+chmod +x hola.sh
