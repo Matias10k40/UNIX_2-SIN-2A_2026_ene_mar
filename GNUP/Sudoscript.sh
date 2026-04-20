@@ -44,8 +44,12 @@ touch /ect/prueba.txt
 mkdir ~/mi_carpta
 #Yes need. Installing packages requires root privileges to modify system files and directories.
 apt install cowsay
+# Creates a file named 'prueba.txt' in the current directory.
 touch prueba.txt
+# Sets permissions to read/write for owner only (600).
 chmod 600 prueba.txt
+# Shows detailed listing of 'prueba.txt' including permissions.
 ls -l prueba.txt
+# Sets permissions to read/write/execute for owner, read/execute for group and others (755).
 chmod 755 prueba.txt
 ls -l prueba.txt
