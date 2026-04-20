@@ -36,3 +36,11 @@ ls -l hola.sh
 
 # Makes hola.sh executable so it can be run directly.
 chmod +x hola.sh
+#Don't need sudo. To read /ect is public 
+ls/ect
+#Yes need. /ect It belongs to root and not to write to normal users.
+touch /ect/prueba.txt
+#Don´t need. ~ is your home directory and you have permissions to write there.
+mkdir ~/mi_carpta
+#Yes need. Installing packages requires root privileges to modify system files and directories.
+apt install cowsay
