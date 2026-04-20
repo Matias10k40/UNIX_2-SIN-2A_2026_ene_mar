@@ -44,3 +44,8 @@ touch /ect/prueba.txt
 mkdir ~/mi_carpta
 #Yes need. Installing packages requires root privileges to modify system files and directories.
 apt install cowsay
+touch prueba.txt
+chmod 600 prueba.txt
+ls -l prueba.txt
+chmod 755 prueba.txt
+ls -l prueba.txt
