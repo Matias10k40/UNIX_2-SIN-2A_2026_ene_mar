@@ -29,3 +29,4 @@
    28  -rw------ 1 usuario usuario 0 feb 20...secretro.txt #600
    29  rw 1 usuario usuario 0 feb 20...secretro.txt #600
    30  history
+   40 sudo useradd -m -s /usr/bin/zsh luna 
