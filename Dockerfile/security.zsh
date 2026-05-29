@@ -7,11 +7,11 @@ ls -la  ~/test_grupo_heredado.txt
 #The grup is the gruop principal of the user
 groups
 # Create a new group and add the user to it
-newgrp desarrollo
+newgrp desarrolladores
 # See the new group
 id -gn
 # Create one file and see the group
-tocuh ~/antes_de_newgrp.txt
+touch ~/antes_de_newgrp.txt
 ls -la ~/antes_de_newgrp.txt
 # Create one file and see the group
 
