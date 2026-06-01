@@ -230,7 +230,7 @@ __set_prompt() {
     fi
     PS1="\[\e]0;Black-Hat-Bash\a\]\[\e[31m\][Matias-Quinteros]\[\e[0m\] \[\e[33m\]\W\[\e[0m\] $mark \$ "
 }
-PROMPT_COMMAND=__set_prompt
+
 EOF
 CMD ["/bin/bash"]
 
