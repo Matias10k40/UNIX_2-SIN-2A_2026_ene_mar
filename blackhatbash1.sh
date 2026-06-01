@@ -27,3 +27,10 @@ set +x
 # + echo 'Hello World!'
 # Hello World!
 # + set +x
+++ echo -n '(Black-Hat-Bash'
++++ git config --get devcontainers-theme.show-dirty
+++ '[' '' = 1 ']'
+++ echo -n ') '
+++ __vsc_preexec_only -x
+++ '[' 1 = 0 ']'
++ set +x
