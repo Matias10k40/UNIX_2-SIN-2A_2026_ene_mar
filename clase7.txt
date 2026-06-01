@@ -1,379 +1,0 @@
-Script started on 2026-02-17 01:03:32+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="125" LINES="16"]
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ echo "dato importante".[K> >[C original.txt
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls
-[?2004lLICENSE  README.md  clase7.txt  ejemplo_debug.py  mi_prmer_script.sh  original.txt  [0m[34;42mpapa[0m  typescript
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ cat original.txt
-[?2004ldato importante
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls -li original.txt
-[?2004l1573010 -rw-rw-rw- 1 codespace codespace 16 Feb 17 01:05 original.txt
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ln original.txt copia.txt
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ln original.txt copia.txt[C[C[1P[1@s[C[1@ [1@l[1P[1@-[1@l[1@i
-[?2004l1573010 -rw-rw-rw- 2 codespace codespace 16 Feb 17 01:05 copia.txt
-1573010 -rw-rw-rw- 2 codespace codespace 16 Feb 17 01:05 original.txt
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ rm original.txt
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls -li copia.txt
-[?2004l1573010 -rw-rw-rw- 1 codespace codespace 16 Feb 17 01:05 copia.txt
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ cat copia.txt 
-[?2004ldato importante
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ echo "secreto"> >[C secreto.txt
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls
-[?2004lLICENSE  README.md  clase7.txt  copia.txt  ejemplo_debug.py  mi_prmer_script.sh  [0m[34;42mpapa[0m  secreto.txt  typescript
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ cat secreto.txt
-[?2004lsecreto
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ln -s secreto.txt acceso.txt
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls -li secreto.txt acceso.txt
-[?2004l1573012 lrwxrwxrwx 1 codespace codespace 11 Feb 17 01:10 [0m[01;36macceso.txt[0m -> secreto.txt
-1573011 -rw-rw-rw- 1 codespace codespace  8 Feb 17 01:09 secreto.txt
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ rm sect[Kreto.txt
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ cat acceso.txt
-[?2004lcat: acceso.txt: No such file or directory
-[?2004h[0;32m@jonathanetitoo [1;31m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ touch test testeando testeo
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls
-[?2004lLICENSE    [0m[40;31;01macceso.txt[0m  copia.txt         mi_prmer_script.sh  test       testeo
-README.md  clase7.txt  ejemplo_debug.py  [34;42mpapa[0m                testeando  typescript
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ lsw[K test*[C
-[?2004ltest  testeando  testeo
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ touch test123 test +[K[K+#
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls
-[?2004lLICENSE    [0m[40;31;01macceso.txt[0m  copia.txt         mi_prmer_script.sh  test    test123    testeo
-README.md  clase7.txt  ejemplo_debug.py  [34;42mpapa[0m                [00;90mtest+#[0m  testeando  typescript
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ lstouch test123 test+#ls[K test*
-[?2004ltest  [0m[00;90mtest+#[0m  test123  testeando  testeo
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ find [K[K[K[K[Ktouch final1 final2 final11 final 3[K22[1P22[C[C
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls
-[?2004lLICENSE    [0m[40;31;01macceso.txt[0m  copia.txt         final1   final2   mi_prmer_script.sh  test    test123    testeo
-README.md  clase7.txt  ejemplo_debug.py  final11  final22  [34;42mpapa[0m                [00;90mtest+#[0m  testeando  typescript
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls fil[Knal?2[C[C
-[?2004lfinal22
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls final?2[K[K2?
-[?2004lfinal22
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ touch final 222[1P222[C[C[C final [K2222
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ touch final222 final2222[14Pls final2?[C2[C[C[C
-[?2004lfinal222
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls final2?2[K??[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-[?2004lfinal2222
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls [a-z].txt
-[?2004lls: cannot access '[a-z].txt': No such file or directory
-[?2004h[0;32m@jonathanetitoo [1;31m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls [a-z].txt[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[Kls final2???[K[K[K[K[K[K[K[K[K[]a]-]c][C*
-[?2004l[0m[40;31;01macceso.txt[0m  clase7.txt  copia.txt
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls "final2?"
-[?2004lls: cannot access 'final2?': No such file or directory
-[?2004h[0;32m@jonathanetitoo [1;31m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ cat /etc/passwd
-[?2004lroot:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/nologin
-sys:x:3:3:sys:/dev:/usr/sbin/nologin
-sync:x:4:65534:sync:/bin:/bin/sync
-games:x:5:60:games:/usr/games:/usr/sbin/nologin
-man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
-lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
-news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
-www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
-backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
-list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
-irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
-_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
-nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
-messagebus:x:100:101::/nonexistent:/usr/sbin/nologin
-polkitd:x:997:997:User for polkitd:/:/usr/sbin/nologin
-codespace:x:1000:1000::/home/codespace:/bin/bash
-sshd:x:101:65534::/run/sshd:/usr/sbin/nologin
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ cat /etc/passwd[3Pls "final2?"[K[K[K[K[K[K[K[K[K[K[K[Kgrep "^sy" /etc/passwd
-[?2004l[01;31m[Ksy[m[Ks:x:3:3:sys:/dev:/usr/sbin/nologin
-[01;31m[Ksy[m[Knc:x:4:65534:sync:/bin:/bin/sync
-[01;31m[Ksy[m[Kstemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ journalctl | tail
-[?2004lNo journal files were found.
--- No entries --
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ journalctl | tail[K[K[K[K[K[K[K
-[?2004l[0;1;39mNo journal files were found.[0m
-[?1h=-- No entries --[m
-[K[?1l>[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ journalctl[K[K[K[K[K[K[K[K[K[Kcd /var/log/
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/var/log [0m$ ls
-[?2004l[0m[01;36mREADME[0m  alternatives.log  [01;34mapt[0m  bootstrap.log  btmp  dpkg.log  faillog  fontconfig.log  [01;34mjournal[0m  lastlog  [01;34mprivate[0m  wtmp
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/var/log [0m$ cat dpkg.log \[K| less
-[?2004l[?1049h[22;0;0t[?1h=2025-10-13 14:02:54 startup archives install
-2025-10-13 14:02:54 install base-passwd:amd64 <none> 3.6.3build1
-2025-10-13 14:02:54 status half-installed base-passwd:amd64 3.6.3build1
-2025-10-13 14:02:54 status unpacked base-passwd:amd64 3.6.3build1
-2025-10-13 14:02:54 configure base-passwd:amd64 3.6.3build1 3.6.3build1
-2025-10-13 14:02:54 status half-configured base-passwd:amd64 3.6.3build1
-2025-10-13 14:02:54 status installed base-passwd:amd64 3.6.3build1
-2025-10-13 14:02:54 startup archives install
-2025-10-13 14:02:54 install base-files:amd64 <none> 13ubuntu10
-2025-10-13 14:02:54 status half-installed base-files:amd64 13ubuntu10
-2025-10-13 14:02:54 status unpacked base-files:amd64 13ubuntu10
-2025-10-13 14:02:54 configure base-files:amd64 13ubuntu10 13ubuntu10
-2025-10-13 14:02:54 status half-configured base-files:amd64 13ubuntu10
-2025-10-13 14:02:54 status installed base-files:amd64 13ubuntu10
-2025-10-13 14:02:54 startup archives install
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 upgrade dpkg 1.22.6ubuntu6 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 status half-configured dpkg 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 status unpacked dpkg 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 status half-installed dpkg 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 status unpacked dpkg:amd64 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 configure dpkg:amd64 1.22.6ubuntu6 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 status half-configured dpkg:amd64 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 status installed dpkg:amd64 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:54 startup archives install
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 install libc6:amd64 <none> 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-installed libc6:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked libc6:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 configure libc6:amd64 2.39-0ubuntu8 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-configured libc6:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status installed libc6:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 startup archives install
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 install perl-base:amd64 <none> 5.38.2-3.2build2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-installed perl-base:amd64 5.38.2-3.2build2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked perl-base:amd64 5.38.2-3.2build2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 configure perl-base:amd64 5.38.2-3.2build2 5.38.2-3.2build2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-configured perl-base:amd64 5.38.2-3.2build2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status installed perl-base:amd64 5.38.2-3.2build2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 startup archives install
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 install mawk:amd64 <none> 1.3.4.20240123-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-installed mawk:amd64 1.3.4.20240123-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked mawk:amd64 1.3.4.20240123-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 configure mawk:amd64 1.3.4.20240123-1build1 1.3.4.20240123-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-configured mawk:amd64 1.3.4.20240123-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status installed mawk:amd64 1.3.4.20240123-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 startup archives unpack
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 upgrade base-files:amd64 13ubuntu10 13ubuntu10
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-configured base-files:amd64 13ubuntu10
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked base-files:amd64 13ubuntu10
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-installed base-files:amd64 13ubuntu10
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked base-files:amd64 13ubuntu10
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 upgrade base-passwd:amd64 3.6.3build1 3.6.3build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-configured base-passwd:amd64 3.6.3build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked base-passwd:amd64 3.6.3build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-installed base-passwd:amd64 3.6.3build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked base-passwd:amd64 3.6.3build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 install bash:amd64 <none> 5.2.21-2ubuntu4
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-installed bash:amd64 5.2.21-2ubuntu4
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked bash:amd64 5.2.21-2ubuntu4
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 install bsdutils:amd64 <none> 1:2.39.3-9ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-installed bsdutils:amd64 1:2.39.3-9ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status unpacked bsdutils:amd64 1:2.39.3-9ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 install coreutils:amd64 <none> 9.4-3ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:55 status half-installed coreutils:amd64 9.4-3ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked coreutils:amd64 9.4-3ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install dash:amd64 <none> 0.5.12-6ubuntu5
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed dash:amd64 0.5.12-6ubuntu5
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked dash:amd64 0.5.12-6ubuntu5
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install debconf:all <none> 1.5.86ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed debconf:all 1.5.86ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked debconf:all 1.5.86ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install debianutils:amd64 <none> 5.17build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed debianutils:amd64 5.17build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked debianutils:amd64 5.17build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install diffutils:amd64 <none> 1:3.10-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed diffutils:amd64 1:3.10-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked diffutils:amd64 1:3.10-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 upgrade dpkg:amd64 1.22.6ubuntu6 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-configured dpkg:amd64 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked dpkg:amd64 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed dpkg:amd64 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked dpkg:amd64 1.22.6ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install e2fsprogs:amd64 <none> 1.47.0-2.4~exp1ubuntu4
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed e2fsprogs:amd64 1.47.0-2.4~exp1ubuntu4
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked e2fsprogs:amd64 1.47.0-2.4~exp1ubuntu4
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install findutils:amd64 <none> 4.9.0-5build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed findutils:amd64 4.9.0-5build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked findutils:amd64 4.9.0-5build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install gcc-14-base:amd64 <none> 14-20240412-0ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed gcc-14-base:amd64 14-20240412-0ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked gcc-14-base:amd64 14-20240412-0ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install grep:amd64 <none> 3.11-4build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed grep:amd64 3.11-4build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked grep:amd64 3.11-4build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install gzip:amd64 <none> 1.12-1ubuntu3
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed gzip:amd64 1.12-1ubuntu3
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked gzip:amd64 1.12-1ubuntu3
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install hostname:amd64 <none> 3.23+nmu2ubuntu2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed hostname:amd64 3.23+nmu2ubuntu2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked hostname:amd64 3.23+nmu2ubuntu2
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install init-system-helpers:all <none> 1.66ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed init-system-helpers:all 1.66ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked init-system-helpers:all 1.66ubuntu1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install libacl1:amd64 <none> 2.3.2-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed libacl1:amd64 2.3.2-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked libacl1:amd64 2.3.2-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install libattr1:amd64 <none> 1:2.5.2-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed libattr1:amd64 1:2.5.2-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked libattr1:amd64 1:2.5.2-1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install libaudit-common:all <none> 1:3.1.2-2.1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed libaudit-common:all 1:3.1.2-2.1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked libaudit-common:all 1:3.1.2-2.1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install libaudit1:amd64 <none> 1:3.1.2-2.1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed libaudit1:amd64 1:3.1.2-2.1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked libaudit1:amd64 1:3.1.2-2.1build1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install libblkid1:amd64 <none> 2.39.3-9ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed libblkid1:amd64 2.39.3-9ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked libblkid1:amd64 2.39.3-9ubuntu6
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install libbz2-1.0:amd64 <none> 1.0.8-5.1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed libbz2-1.0:amd64 1.0.8-5.1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked libbz2-1.0:amd64 1.0.8-5.1
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 install libc-bin:amd64 <none> 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed libc-bin:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked libc-bin:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 upgrade libc6:amd64 2.39-0ubuntu8 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-configured libc6:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status unpacked libc6:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:56 status half-installed libc6:amd64 2.39-0ubuntu8
-:[K[K [KESCESC[KOO[KBB[K2025-10-13 14:02:57 status unpacked libc6:amd64 2.39-0ubuntu8
-:[K[K[?1l>[?1049l[23;0;0t[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/var/log [0m$ grep "[7mGlobbing[27m[1PGlobbin[K[K[K[K[K[K[K[K[K[K[K[K[Kcat dpkg.log | lessls[Kcd /var/log/ls[Kcat dpkg.log | lessls[Kcat dpkg.log | less[K[K[K[Ktail
-[?2004l2026-02-17 00:39:57 configure nmap:amd64 7.94+git20230807.3be01efb1+dfsg-3build2 <none>
-2026-02-17 00:39:57 status unpacked nmap:amd64 7.94+git20230807.3be01efb1+dfsg-3build2
-2026-02-17 00:39:57 status half-configured nmap:amd64 7.94+git20230807.3be01efb1+dfsg-3build2
-2026-02-17 00:39:57 status installed nmap:amd64 7.94+git20230807.3be01efb1+dfsg-3build2
-2026-02-17 00:39:57 trigproc man-db:amd64 2.12.0-4build2 <none>
-2026-02-17 00:39:57 status half-configured man-db:amd64 2.12.0-4build2
-2026-02-17 00:40:01 status installed man-db:amd64 2.12.0-4build2
-2026-02-17 00:40:01 trigproc libc-bin:amd64 2.39-0ubuntu8.6 <none>
-2026-02-17 00:40:01 status half-configured libc-bin:amd64 2.39-0ubuntu8.6
-2026-02-17 00:40:05 status installed libc-bin:amd64 2.39-0ubuntu8.6
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/var/log [0m$ cat dpkg.log | tail[K[K[K[Khead
-[?2004l2025-10-13 14:02:54 startup archives install
-2025-10-13 14:02:54 install base-passwd:amd64 <none> 3.6.3build1
-2025-10-13 14:02:54 status half-installed base-passwd:amd64 3.6.3build1
-2025-10-13 14:02:54 status unpacked base-passwd:amd64 3.6.3build1
-2025-10-13 14:02:54 configure base-passwd:amd64 3.6.3build1 3.6.3build1
-2025-10-13 14:02:54 status half-configured base-passwd:amd64 3.6.3build1
-2025-10-13 14:02:54 status installed base-passwd:amd64 3.6.3build1
-2025-10-13 14:02:54 startup archives install
-2025-10-13 14:02:54 install base-files:amd64 <none> 13ubuntu10
-2025-10-13 14:02:54 status half-installed base-files:amd64 13ubuntu10
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/var/log [0m$ [7m2025-10-13 14:02:54 status[27m[26@2025-10-13 14:02:54 status[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P2025-10-13 14:02:54 statu[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[1@g[1@r[1@e[1@p[1@ [1@"[1@^[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C" dpkg.log
-[?2004l[01;31m[K2025-10-13 14:02:54 status[m[K half-installed base-passwd:amd64 3.6.3build1
-[01;31m[K2025-10-13 14:02:54 status[m[K unpacked base-passwd:amd64 3.6.3build1
-[01;31m[K2025-10-13 14:02:54 status[m[K half-configured base-passwd:amd64 3.6.3build1
-[01;31m[K2025-10-13 14:02:54 status[m[K installed base-passwd:amd64 3.6.3build1
-[01;31m[K2025-10-13 14:02:54 status[m[K half-installed base-files:amd64 13ubuntu10
-[01;31m[K2025-10-13 14:02:54 status[m[K unpacked base-files:amd64 13ubuntu10
-[01;31m[K2025-10-13 14:02:54 status[m[K half-configured base-files:amd64 13ubuntu10
-[01;31m[K2025-10-13 14:02:54 status[m[K installed base-files:amd64 13ubuntu10
-[01;31m[K2025-10-13 14:02:54 status[m[K half-configured dpkg 1.22.6ubuntu6
-[01;31m[K2025-10-13 14:02:54 status[m[K unpacked dpkg 1.22.6ubuntu6
-[01;31m[K2025-10-13 14:02:54 status[m[K half-installed dpkg 1.22.6ubuntu6
-[01;31m[K2025-10-13 14:02:54 status[m[K unpacked dpkg:amd64 1.22.6ubuntu6
-[01;31m[K2025-10-13 14:02:54 status[m[K half-configured dpkg:amd64 1.22.6ubuntu6
-[01;31m[K2025-10-13 14:02:54 status[m[K installed dpkg:amd64 1.22.6ubuntu6
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/var/log [0m$ cd
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m~ [0m$ ce[Kd /workspaces/
-.codespaces/                .oryx/                      UNIX_2-SIN-2A_2026_ene_mar/ 
-[0;32m@jonathanetitoo [0m➜ [1;34m~ [0m$ cd /workspaces/UNi[KIX_2-SIN-2A_2026_ene_mar/
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ touch "archivo raro.txt"
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ ls
-[?2004l LICENSE     'archivo raro.txt'   ejemplo_debug.py   final2     final2222            test      testeando
- README.md    clase7.txt          final1             final22    mi_prmer_script.sh   [0m[00;90mtest+#[0m    testeo
- [40;31;01macceso.txt[0m   copia.txt           final11            final222   [34;42mpapa[0m                 test123   typescript
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ cat archu[Kivo\ raro.txt [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ tp[Kouch "--archivo"
-[?2004ltouch: unrecognized option '--archivo'
-Try 'touch --help' for more information.
-[?2004h[0;32m@jonathanetitoo [1;31m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ man nmap
-[?2004l[?1049h[22;0;0t[?1h=[4mNMAP[24m(1)                                            Nmap Reference Guide                                           [4mNMAP[24m(1)[m
-[m
-[1mNAME[0m[m
-       nmap - Network exploration tool and security / port scanner[m
-[m
-[1mSYNOPSIS[0m[m
-[m
-       [1mnmap [22m[[4mScan[24m [4mType[24m...] [[4mOptions[24m] {[4mtarget[24m [4mspecification[24m}[m
-[m
-[1mDESCRIPTION[0m[m
-       Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to[m
-       rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets in novel ways[m
-       to determine what hosts are available on the network, what services (application name and version) those hosts are[m
-       offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in[m
-       use, and dozens of other characteristics. While Nmap is commonly used for security audits, many systems and[m
-[7m Manual page nmap(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       network administrators find it useful for routine tasks such as network inventory, managing service upgrade[m
-[7m Manual page nmap(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       schedules, and monitoring host or service uptime.[m
-[7m Manual page nmap(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The output from Nmap is a list of scanned targets, with supplemental information on each depending on the options[m
-[7m Manual page nmap(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       used. Key among that information is the “interesting ports table”.  That table lists the port number and protocol,[m
-[7m Manual page nmap(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       service name, and state. The state is either open, filtered, closed, or unfiltered.  Open means that an[m
-[7m Manual page nmap(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       application on the target machine is listening for connections/packets on that port.  Filtered means that a[m
-[7m Manual page nmap(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       firewall, filter, or other network obstacle is blocking the port so that Nmap cannot tell whether it is open or[m
-[7m Manual page nmap(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       closed.  Closed ports have no application listening on them, though they could open up at any time. Ports are[m
-[7m Manual page nmap(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       classified as unfiltered when they are responsive to Nmap's probes, but Nmap cannot determine whether they are[m
-[7m Manual page nmap(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       open or closed. Nmap reports the state combinations open|filtered and closed|filtered when it cannot determine[m
-[7m Manual page nmap(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       which of the two states describe a port. The port table may also include software version details when version[m
-[7m Manual page nmap(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       detection has been requested. When an IP protocol scan is requested ([1m-sO[22m), Nmap provides information on supported[m
-[7m Manual page nmap(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       IP protocols rather than listening ports.[m
-[7m Manual page nmap(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       In addition to the interesting ports table, Nmap can provide further information on targets, including reverse DNS[m
-[7m Manual page nmap(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       names, operating system guesses, device types, and MAC addresses.[m
-[7m Manual page nmap(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       A typical Nmap scan is shown in Example 1. The only Nmap arguments used in this example are [1m-A[22m, to enable OS and[m
-[7m Manual page nmap(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       version detection, script scanning, and traceroute; [1m-T4 [22mfor faster execution; and then the hostname.[m
-[7m Manual page nmap(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mExample 1. A representative Nmap scan[0m[m
-[7m Manual page nmap(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           # [1mnmap -A -T4 scanme.nmap.org[0m[m
-[7m Manual page nmap(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Nmap scan report for scanme.nmap.org (74.207.244.221)[m
-[7m Manual page nmap(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Host is up (0.029s latency).[m
-[7m Manual page nmap(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           rDNS record for 74.207.244.221: li86-221.members.linode.com[m
-[7m Manual page nmap(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Not shown: 995 closed ports[m
-[7m Manual page nmap(1) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           PORT     STATE    SERVICE     VERSION[m
-[7m Manual page nmap(1) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           22/tcp   open     ssh         OpenSSH 5.3p1 Debian 3ubuntu7 (protocol 2.0)[m
-[7m Manual page nmap(1) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           | ssh-hostkey: 1024 8d:60:f1:7c:ca:b7:3d:0a:d6:67:54:9d:69:d9:b9:dd (DSA)[m
-[7m Manual page nmap(1) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           |_2048 79:f8:09:ac:d4:e2:32:42:10:49:d3:bd:20:82:85:ec (RSA)[m
-[7m Manual page nmap(1) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           80/tcp   open     http        Apache httpd 2.2.14 ((Ubuntu))[m
-[7m Manual page nmap(1) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           |_http-title: Go ahead and ScanMe![m
-[7m Manual page nmap(1) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           646/tcp  filtered ldp[m
-[7m Manual page nmap(1) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           1720/tcp filtered H.323/Q.931[m
-[7m Manual page nmap(1) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           9929/tcp open     nping-echo  Nping echo[m
-[7m Manual page nmap(1) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Device type: general purpose[m
-[7m Manual page nmap(1) line 40 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Running: Linux 2.6.X[m
-[7m Manual page nmap(1) line 41 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           OS CPE: cpe:/o:linux:linux_kernel:2.6.39[m
-[7m Manual page nmap(1) line 42 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           OS details: Linux 2.6.39[m
-[7m Manual page nmap(1) line 43 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Network Distance: 11 hops[m
-[7m Manual page nmap(1) line 44 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Service Info: OS: Linux; CPE: cpe:/o:linux:kernel[m
-[7m Manual page nmap(1) line 45 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 46 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           TRACEROUTE (using port 53/tcp)[m
-[7m Manual page nmap(1) line 47 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           HOP RTT      ADDRESS[m
-[7m Manual page nmap(1) line 48 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [Cut first 10 hops for brevity][m
-[7m Manual page nmap(1) line 49 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           11  17.65 ms li86-221.members.linode.com (74.207.244.221)[m
-[7m Manual page nmap(1) line 50 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 51 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Nmap done: 1 IP address (1 host up) scanned in 14.40 seconds[m
-[7m Manual page nmap(1) line 52 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 53 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The newest version of Nmap can be obtained from [34m[1mhttps://nmap.org[0m[1m[22m. The newest version of this man page is available[m
-[7m Manual page nmap(1) line 54 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       at [34m[1mhttps://nmap.org/book/man.html[0m[1m[22m.  It is also included as a chapter of Nmap Network Scanning: The Official Nmap[m
-[7m Manual page nmap(1) line 55 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Project Guide to Network Discovery and Security Scanning (see [34m[1mhttps://nmap.org/book/[0m[1m[22m).[m
-[7m Manual page nmap(1) line 56 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 57 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mOPTIONS SUMMARY[0m[m
-[7m Manual page nmap(1) line 58 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This options summary is printed when Nmap is run with no arguments, and the latest version is always available at[m
-[7m Manual page nmap(1) line 59 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [34m[1mhttps://svn.nmap.org/nmap/docs/nmap.usage.txt[0m[1m[22m. It helps people remember the most common options, but is no[m
-[7m Manual page nmap(1) line 60 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       substitute for the in-depth documentation in the rest of this manual. Some obscure options aren't even included[m
-[7m Manual page nmap(1) line 61 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       here.[m
-[7m Manual page nmap(1) line 62 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page nmap(1) line 63 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Nmap 7.94 ( https://nmap.org )[m
-[7m Manual page nmap(1) line 64 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Usage: nmap [Scan Type(s)] [Options] {target specification}[m
-[7m Manual page nmap(1) line 65 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           TARGET SPECIFICATION:[m
-[7m Manual page nmap(1) line 66 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             Can pass hostnames, IP addresses, networks, etc.[m
-[7m Manual page nmap(1) line 67 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254[m
-[7m Manual page nmap(1) line 68 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -iL <inputfilename>: Input from list of hosts/networks[m
-[7m Manual page nmap(1) line 69 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -iR <num hosts>: Choose random targets[m
-[7m Manual page nmap(1) line 70 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             --exclude <host1[,host2][,host3],...>: Exclude hosts/networks[m
-[7m Manual page nmap(1) line 71 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             --excludefile <exclude_file>: Exclude list from file[m
-[7m Manual page nmap(1) line 72 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           HOST DISCOVERY:[m
-[7m Manual page nmap(1) line 73 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -sL: List Scan - simply list targets to scan[m
-[7m Manual page nmap(1) line 74 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -sn: Ping Scan - disable port scan[m
-[7m Manual page nmap(1) line 75 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -Pn: Treat all hosts as online -- skip host discovery[m
-[7m Manual page nmap(1) line 76 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -PS/PA/PU/PY[portlist]: TCP SYN/ACK, UDP or SCTP discovery to given ports[m
-[7m Manual page nmap(1) line 77 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -PE/PP/PM: ICMP echo, timestamp, and netmask request discovery probes[m
-[7m Manual page nmap(1) line 78 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -PO[protocol list]: IP Protocol Ping[m
-[7m Manual page nmap(1) line 79 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             -n/-R: Never do DNS resolution/Always resolve [default: sometimes][m
-[7m Manual page nmap(1) line 80 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ VAR=HOLA
-[?2004l[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ echo $VAR
-[?2004lHOLA
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ echo $VAR[K[K[KBASJ[KH
-[?2004l/usr/bin/bash
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain[0;36m) [0m$ echo $BASH[K[K[K[KPATH
-[?2004l/usr/local/rvm/gems/ruby-3.4.7/bin:/usr/local/rvm/gems/ruby-3.4.7@global/bin:/usr/local/rvm/rubies/ruby-3.4.7/bin:/vscode/bin/linux-x64/c3a26841a84f20dfe0850d0a5a9bd01da4f003ea/bin/remote-cli:/home/codespace/.local/bin:/home/codespace/.dotnet:/home/codespace/nvm/current/bin:/home/codespace/.php/current/bin:/home/codespace/.python/current/bin:/home/codespace/java/current/bin:/home/codespace/.ruby/current/bin:/home/codespace/.local/bin:/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/jupyter:/usr/local/oryx:/usr/local/go/bin:/go/bin:/usr/local/sdkman/bin:/usr/local/sdkman/candidates/java/current/bin:/usr/local/sdkman/candidates/gradle/current/bin:/usr/local/sdkman/candidates/maven/current/bin:/usr/local/sdkman/candidates/ant/current/bin:/usr/local/rvm/gems/default/bin:/usr/local/rvm/gems/default@global/bin:/usr/local/rvm/rubies/default/bin:/usr/local/share/rbenv/bin:/usr/local/php/current/bin:/opt/conda/bin:/usr/local/nvs:/usr/local/share/nvm/versions/node/v24.11.1/bin:/usr/local/hugo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/share/dotnet:/home/codespace/.dotnet/tools:/usr/local/rvm/bin
-[?2004h[0;32m@jonathanetitoo [0m➜ [1;34m/workspaces/UNIX_2-SIN-2A_2026_ene_mar [0;36m([1;31mmain
