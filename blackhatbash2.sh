@@ -5,3 +5,5 @@ rectory.
 mkdir mydirectory
 touch mydirectory/myfile
 ls -l mydirectory
+
+-rw-rw-rw- 1 codespace codespace 0 Jun  1 15:41 myfile
