@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+set -x
 bash --version 
 env
 echo ${SHELL}
@@ -7,8 +9,9 @@ echo ${OSTYPE}
 ps -e -f
 ps -ef
 df --human-readable
-#!/bin/bash
-#!/usr/bin/env bash
-#!/bin/bash -x 
-#!/bin/bash -r restricted
- bash -r script.sh
+bash -r blackhatbash1.sh  
+echo "Hello World!" 
+bash helloworld.sh
+bash -n script.sh
+bash -x script.sh
+set +x 
