@@ -5,3 +5,4 @@ result=$((5*5))
 echo ${result}
 result=$((5 +505))
 echo ${result}
+
