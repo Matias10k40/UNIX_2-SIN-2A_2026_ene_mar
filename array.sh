@@ -11,7 +11,7 @@ echo "${IP_ADDRESSES[0]}"
 #echo "${IP_ADDRESSES[*]}"
 IP_ADDRESSES[0]="192.168.1.10"
 
-
+#!/bin/bash 
 
 
 
