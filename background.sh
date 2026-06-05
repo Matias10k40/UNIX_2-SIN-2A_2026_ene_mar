@@ -1,5 +1,6 @@
 #!/bin/bash
-# This script will send the sleep command to the background. echo "Sleeping for 10 seconds..."
+# This script will send the sleep command to the background. 
+echo "Sleeping for 10 seconds..."
 sleep 10 &
 # Creates a file
 echo "Creating the file test123"
