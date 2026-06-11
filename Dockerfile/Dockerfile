@@ -237,7 +237,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  # so they are removed from this layer before it is saved.
  # If we deleted them in a separate RUN, they would still exist in the
  # previous layer, wasting space in the final image.
- # rm -rf /var/lib/apt/lists/* removes the package index fetched by apt-get update.
+ # rm -rf /var/lib/apt/lists/* removes the package index fetched by apt-get update.,
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
