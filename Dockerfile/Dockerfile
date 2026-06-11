@@ -1,30 +1,35 @@
+
 # ============================================================================
-#  Dockerfile — "receta" para construir la imagen del curso
+#  Dockerfile — build recipe for the course container
 # ============================================================================
-#  Un Dockerfile es un archivo de texto con instrucciones paso a paso que
-#  Docker (o Codespaces) lee de arriba hacia abajo para fabricar una
-#  "imagen". Una imagen es como un molde congelado de un sistema Linux
-#  listo para usar; cada vez que abres el Codespace, se crea un
-#  "contenedor" a partir de ese molde.
+#  A Dockerfile is a plain-text file with step-by-step instructions that
+#  Docker reads top-to-bottom to build an "image". An image is a frozen
+#  snapshot of a Linux system ready to use. Every time you open the
+#  Codespace, Docker creates a fresh "container" from that snapshot.
 #
-#  Analogía: la imagen es el PLANO, el contenedor es la CASA construida
-#  con ese plano. Puedes construir muchas casas iguales a partir de un
-#  solo plano, y si destruyes una casa el plano sigue intacto.
+#  Think of it like this: the image is the BLUEPRINT, the container is the
+#  HOUSE built from it. You can build many identical houses from one blueprint,
+#  and destroying a house leaves the blueprint untouched.
 #
-#  Cada instrucción (FROM, ENV, RUN...) crea una "capa". Docker guarda
-#  esas capas en caché: si no cambias las primeras líneas, no las
-#  reconstruye y el siguiente build es casi instantáneo.
+#  Each instruction (FROM, ENV, RUN...) creates a new read-only "layer".
+#  Docker caches these layers: if the first lines haven't changed, it skips
+#  rebuilding them and the next build is almost instant.
+#  (BHB Ch.3 - Installing Docker and Docker Compose)
 # ============================================================================
 
 
 # ----------------------------------------------------------------------------
-# FROM: imagen base sobre la que vamos a construir
+# (a) FROM: the base image we build on top of
 # ----------------------------------------------------------------------------
-# En lugar de partir de cero, partimos de la imagen oficial de Kali Linux
-# en su versión "rolling" (actualización continua, siempre al día).
-# Todo lo que instalemos más abajo se apila ENCIMA de esta base.
+# Instead of starting from scratch, we start from the official Kali Linux
+# image in its "rolling" release (continuously updated, always current).
+# Everything we install below gets stacked ON TOP of this base.
+#
+# A base image is a pre-built Linux filesystem that becomes the starting
+# point for our own custom image. Kali is chosen because it comes
+# pre-configured for security and networking work — the focus of this course.
+# (BHB Ch.3 - Installing Kali)
 FROM kalilinux/kali-rolling:latest
-
 
 # ----------------------------------------------------------------------------
 # ENV: variables de entorno permanentes dentro del contenedor
