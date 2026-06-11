@@ -87,46 +87,72 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
 
 
 # ----------------------------------------------------------------------------
-# RUN: ejecutar comandos durante la construcción de la imagen
+# (e) RUN apt-get update && apt-get install — installing all course software
 # ----------------------------------------------------------------------------
-# Aquí instalamos TODO el software del curso en un solo RUN.
+# This single RUN installs everything the course needs.
 #
-#   apt-get update          -> actualiza la lista de paquetes disponibles
-#   apt-get install         -> descarga e instala los paquetes listados
-#     -y                    -> responde "sí" automáticamente
-#     --no-install-recommends -> instala SOLO lo esencial (no los extras
-#                                sugeridos). Ahorra cientos de MB.
+# WHY ONE SINGLE RUN instead of many small ones?
+# Each RUN creates a new layer in the image. More layers = larger image.
+# By chaining everything with && and \, we keep it all in one layer,
+# which makes the final image smaller and faster to download.
+# (BHB Ch.3 - Deploying Docker Containers)
 #
-# ¿Por qué un solo RUN gigante y no 10 RUN pequeños?
-# Porque CADA RUN crea una capa nueva en la imagen. Menos capas = imagen
-# más pequeña, más rápida de construir y de descargar.
+# Key flags:
+#   apt-get update              → refreshes the list of available packages
+#                                 from Kali's repositories; always run before install
+#   apt-get install -y          → -y auto-answers "yes" to all prompts,
+#                                 equivalent to DEBIAN_FRONTEND for apt itself
+#   --no-install-recommends     → installs ONLY required dependencies, not
+#                                 suggested extras; saves hundreds of MB
 #
-# El "&&" encadena comandos: ejecuta el siguiente SOLO SI el anterior
-# terminó bien. Si algo falla, el build se detiene con error (que es lo
-# que queremos: mejor un error claro que una imagen rota).
+# The "&&" operator chains commands: the next one runs ONLY IF the previous
+# one succeeded (exit code 0). If apt-get update fails, install never runs.
+# (BHB Ch.1 - Control Operators)
+#
+# The trailing "\" at the end of each package line is a line continuation —
+# it lets us write one package per line for readability while keeping it
+# as a single shell command. (BHB Ch.1 - Bash Basics)
+#
+# Notable tools installed and what they are for:
+#   gawk        → GNU awk, a powerful text-processing language used to filter
+#                 and transform structured output (BHB Ch.2 - Filtering with awk)
+#   sed         → stream editor, edits text line by line using patterns
+#                 (BHB Ch.2 - Editing Streams with sed)
+#   grep        → filters lines that match a pattern; one of the most used
+#                 tools in bash scripting (BHB Ch.2 - Filtering with grep)
+#   shellcheck  → static analysis linter for bash scripts; catches errors
+#                 and bad practices before you run the script
+#   nmap        → the most widely used network port scanner; essential for
+#                 reconnaissance in pentesting (BHB Ch.3 - The Machines)
+#   tcpdump     → captures raw network packets from the command line
+#   tshark      → terminal version of Wireshark; deep packet inspection
+#   tor         → routes traffic through the Tor anonymity network
+#   proxychains4→ forces any command to route through a chain of proxies
+#   jq          → parses and queries JSON directly from the command line
+#   man-db      → installs the "man" command to read manual pages;
+#                 Kali's base image strips docs to save space, we restore them
 RUN apt-get update && apt-get install -y --no-install-recommends \
     \
-    # === Editores de texto y shells (intérpretes de comandos) ===
+    # === Text editors and shells ===
     neovim \
     vim \
     zsh \
     bash-completion \
     \
-    # === Herramientas de 4ta generación ===
-    # Estas son las protagonistas de las Unidades 2, 3 y 4:
+    # === Classic UNIX text-processing tools (BHB Ch.2 - Text Processing) ===
     perl \
     make \
     gawk \
     sed \
     grep \
     \
-    # === Utilidades básicas de UNIX ===
-    # coreutils trae cat, ls, head, tail, sort, cut, tr, etc.
-    # findutils trae find y xargs.
-    # procps trae ps, top, kill (gestión de procesos).
-    # less = paginador para leer archivos largos.
-    # tree = muestra directorios como árbol.
-    # jq = procesa JSON desde la línea de comandos.
+    # === Core UNIX utilities ===
+    # coreutils: cat, ls, head, tail, sort, cut, tr, etc.
+    # findutils: find and xargs for searching the filesystem
+    # procps:    ps, top, kill — process management (BHB Ch.1 - Running Linux Commands)
+    # less:      pager for reading long files one screen at a time
+    # tree:      displays directory structure as a visual tree
+    # jq:        queries JSON from the command line
     coreutils \
     findutils \
     procps \
@@ -134,15 +160,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tree \
     jq \
     \
-    # === Páginas de manual (comando `man`) ===
-    # La imagen base de Kali viene sin documentación para
-    # ahorrar espacio. La reinstalamos porque en el curso "man bash" o
-    # "man grep" es material de consulta obligada.
+    # === Manual pages ===
+    # Kali's base image removes documentation to save space.
+    # We reinstall it because "man bash" and "man grep" are required reading.
+    # (BHB Ch.1 - Running Linux Commands)
     man-db \
     manpages \
     manpages-posix \
     \
-    # === Red básica y utilidades de descarga ===
+    # === Network and download utilities ===
     curl \
     wget \
     git \
@@ -150,22 +176,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     locales \
     \
-    # === Linter (revisor automático de errores) para scripts Bash ===
+    # === Bash script linter ===
     shellcheck \
     \
-    # === Reconocimiento y escaneo de red ===
-    # nmap = el escáner de puertos más famoso.
-    # masscan = escaneo masivo de rangos grandes de IPs.
+    # === Network reconnaissance and scanning ===
+    # nmap:    port scanner, OS detection, service version detection
+    # masscan: extremely fast scanner for large IP ranges
     nmap \
     masscan \
     \
-    # === Captura y análisis de paquetes de red ===
-    # tcpdump = capturador clásico por terminal.
-    # tshark = versión de terminal de Wireshark.
+    # === Packet capture and analysis ===
+    # tcpdump: classic command-line packet sniffer
+    # tshark:  terminal-based Wireshark for deep packet inspection
     tcpdump \
     tshark \
     \
-    # === Utilidades de red variadas ===
+    # === Networking utilities ===
     netcat-traditional \
     socat \
     dnsutils \
@@ -176,19 +202,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     net-tools \
     iputils-ping \
     \
-    # === Anonimato: Tor y similares ===
-    # tor = cliente de la red Tor.
-    # torsocks = "envoltorio" que hace pasar cualquier comando por Tor.
-    # proxychains4 = encadena múltiples proxies.
-    # obfs4proxy = ofusca el tráfico de Tor para evadir bloqueos.
+    # === Anonymity tools ===
+    # tor:         routes traffic through the Tor onion network
+    # torsocks:    wrapper that forces any command through Tor
+    # proxychains4:chains multiple proxies together
+    # obfs4proxy:  obfuscates Tor traffic to bypass blocks
     tor \
     torsocks \
     proxychains4 \
     obfs4proxy \
     \
-    # === Cliente HTTP más legible que curl para aprender ===
+    # === Human-friendly HTTP client ===
     httpie \
-    \
+ \
+ 
  # --- Después de instalar, activamos el idioma español ---
  # sed busca "# es_ES.UTF-8" en /etc/locale.gen y le quita el "#" para
  # activar esa línea. Luego locale-gen compila los archivos de idioma.
