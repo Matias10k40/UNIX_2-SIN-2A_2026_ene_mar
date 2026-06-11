@@ -292,6 +292,17 @@ RUN git config --system --add safe.directory '*' \
  && git config --system pull.rebase false \
  && git lfs install --system
 
+ # ----------------------------------------------------------------------------
+# (k) RUN chsh -s /usr/bin/zsh root — change the default shell to zsh
+# ----------------------------------------------------------------------------
+# chsh (change shell) updates /etc/passwd to set zsh as the login shell
+# for the root user. This means interactive sessions will launch zsh instead
+# of bash by default.
+# This is equivalent to what BHB Ch.1 describes for switching shells:
+# "chsh -s /bin/bash" — same command, different target shell.
+# (BHB Ch.1 - Accessing the Bash Shell)
+RUN chsh -s /usr/bin/zsh root
+
 # ----------------------------------------------------------------------------
 # CMD: comando que se ejecuta por defecto al arrancar el contenedor
 # ----------------------------------------------------------------------------
