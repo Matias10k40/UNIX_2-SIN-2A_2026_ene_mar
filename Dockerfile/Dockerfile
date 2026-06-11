@@ -303,29 +303,83 @@ RUN git config --system --add safe.directory '*' \
 # (BHB Ch.1 - Accessing the Bash Shell)
 RUN chsh -s /usr/bin/zsh root
 
-# ----------------------------------------------------------------------------
-# CMD: comando que se ejecuta por defecto al arrancar el contenedor
-# ----------------------------------------------------------------------------
-# Lanza una shell bash interactiva. Codespaces la sobrescribe con su
-# propia terminal integrada de VS Code, pero es buena práctica dejarla
-# definida para que la imagen sea usable también con Docker puro.
-# Prompt del curso para bash
-RUN cat >> /root/.bashrc <<'EOF'
 
-# ===== Prompt del curso =====
+# ----------------------------------------------------------------------------
+# (l) Here-document (cat >> ~/.zshrc <<'EOF' ... EOF) — custom prompt
+# ----------------------------------------------------------------------------
+# A here-document (heredoc) is a redirection that feeds multiple lines of
+# text as stdin to a command, without needing a separate file.
+# The syntax "<<'EOF'" means: read everything until the line containing
+# just EOF as input. The single quotes around EOF prevent variable expansion
+# inside the block — the text is treated literally. (BHB Ch.1 - Redirection Operators)
+#
+# "cat >>" appends the block to /root/.zshrc, the zsh startup file that
+# runs every time a new interactive shell session opens.
+#
+# What the PROMPT block does:
+#   __set_prompt() is a function called before every prompt is displayed.
+#   It checks the exit code ($?) of the last command:
+#     - exit code 0  → shows a green ✓ (success)
+#     - any other    → shows a red ✗ followed by the error code (failure)
+#   PS1 is the environment variable that defines the prompt appearance.
+#   \[\e[36m\] sets the color to cyan; \[\e[0m\] resets it.
+#   \W prints only the current directory name (not the full path).
+#   PROMPT_COMMAND tells zsh to run __set_prompt before every prompt.
+# (BHB Ch.1 - Checking Environment Variables, BHB Ch.2 - Bash Customizations)
+RUN cat >> /root/.zshrc <<'EOF'
+ 
+ 
+# ----------------------------------------------------------------------------
+# (l) Here-document (cat >> ~/.zshrc <<'EOF' ... EOF) — custom prompt
+# ----------------------------------------------------------------------------
+# A here-document (heredoc) is a redirection that feeds multiple lines of
+# text as stdin to a command, without needing a separate file.
+# The syntax "<<'EOF'" means: read everything until the line containing
+# just EOF as input. The single quotes around EOF prevent variable expansion
+# inside the block — the text is treated literally. (BHB Ch.1 - Redirection Operators)
+#
+# "cat >>" appends the block to /root/.zshrc, the zsh startup file that
+# runs every time a new interactive shell session opens.
+#
+# What the PROMPT block does:
+#   __set_prompt() is a function called before every prompt is displayed.
+#   It checks the exit code ($?) of the last command:
+#     - exit code 0  → shows a green ✓ (success)
+#     - any other    → shows a red ✗ followed by the error code (failure)
+#   PS1 is the environment variable that defines the prompt appearance.
+#   \[\e[36m\] sets the color to cyan; \[\e[0m\] resets it.
+#   \W prints only the current directory name (not the full path).
+#   PROMPT_COMMAND tells zsh to run __set_prompt before every prompt.
+# (BHB Ch.1 - Checking Environment Variables, BHB Ch.2 - Bash Customizations)
+RUN cat >> /root/.zshrc <<'EOF'
+
+# ----------------------------------------------------------------------------
+# (m) CMD — the default command when the container starts
+# ----------------------------------------------------------------------------
+# CMD defines what runs when someone starts the container without specifying
+# a command explicitly (e.g., "docker run <image>").
+# Unlike RUN (which executes during BUILD time to modify the image),
+# CMD executes at RUNTIME when the container is launched.
+# Only one CMD is allowed per Dockerfile — if you write multiple, only the
+# last one takes effect.
+# Codespaces overrides this with its own VS Code integrated terminal,
+# but defining it makes the image usable with plain Docker too.
+# (BHB Ch.1 - Accessing the Bash Shell
+CMD ["/bin/zsh"]
+
+# ===== Course prompt =====
 __set_prompt() {
     local ec=$?
     local mark
     if [ $ec -eq 0 ]; then
-        mark='\[\e[32m\]✓\[\e[0m\]'
+        mark=$'\e[32m✓\e[0m'
     else
-        mark="\[\e[31m\]✗ $ec\[\e[0m\]"
+        mark=$"\e[31m✗ $ec\e[0m"
     fi
-    PS1="\[\e[36m\][TU_NOMBRE]\[\e[0m\] \[\e[33m\]\W\[\e[0m\] $mark \$ "
+    PROMPT=$'%{\e[35m%}[Matias Quinteros]%{\e[0m%} %{\e[33m%}%1~%{\e[0m%} '"$mark"$' %# '
 }
-PROMPT_COMMAND=__set_prompt
+precmd() { __set_prompt; }
 EOF
-CMD ["/bin/bash"]
 
 
 
