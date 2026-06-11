@@ -350,7 +350,7 @@ RUN cat >> /root/.zshrc <<'EOF'
 #   \W prints only the current directory name (not the full path).
 #   PROMPT_COMMAND tells zsh to run __set_prompt before every prompt.
 # (BHB Ch.1 - Checking Environment Variables, BHB Ch.2 - Bash Customizations)
-RUN cat >> /root/.zshrc <<'EOF'
+RUN cat >> /etc/zsh/zshrc <<'EOF'   
 
 # ===== Course prompt =====
 __set_prompt() {
