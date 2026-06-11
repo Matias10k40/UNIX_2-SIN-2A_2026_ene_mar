@@ -71,12 +71,17 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 
 # ----------------------------------------------------------------------------
-# Pre-respuesta a una pregunta interactiva de Wireshark
+# (d) RUN debconf-set-selections — pre-answering Wireshark's install prompt
 # ----------------------------------------------------------------------------
-# Wireshark/tshark PREGUNTA durante su instalación si los usuarios
-# normales (no-root) deben poder capturar paquetes. Como en el contenedor
-# siempre somos root, respondemos "false" POR ADELANTADO usando
-# debconf-set-selections para que no detenga el build esperando input.
+# Wireshark/tshark asks an interactive question during installation:
+# "Should non-superusers be able to capture packets?"
+# Since we always run as root in this container, the answer is "false".
+# We pre-feed that answer using debconf-set-selections BEFORE apt runs,
+# so the build never pauses waiting for input.
+#
+# The pipe "|" redirects the output of echo as input to debconf-set-selections.
+# This is a core bash pattern: chaining tools together via stdout/stdin.
+# (BHB Ch.1 - Redirection Operators)
 RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
     | debconf-set-selections
 
