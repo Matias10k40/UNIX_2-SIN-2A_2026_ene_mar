@@ -229,20 +229,29 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
- # --- Limpieza final: reducir el tamaño de la imagen ---
- # apt deja archivos de caché que ya no necesitamos después de instalar.
- # Borrarlos aquí (en el mismo RUN) hace la capa final más pequeña.
- # Si los borráramos en otro RUN, seguirían ocupando en la capa anterior.
+# ----------------------------------------------------------------------------
+ # (g) apt-get clean && rm -rf — cleaning up to shrink the image
+ # ----------------------------------------------------------------------------
+ # After installation, apt leaves downloaded package files (.deb) in a cache
+ # directory we no longer need. We delete them HERE, in the SAME RUN,
+ # so they are removed from this layer before it is saved.
+ # If we deleted them in a separate RUN, they would still exist in the
+ # previous layer, wasting space in the final image.
+ # rm -rf /var/lib/apt/lists/* removes the package index fetched by apt-get update.
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
 
 # ----------------------------------------------------------------------------
-# SHELL: qué intérprete usar en los siguientes RUN
+# (h) SHELL — switch Docker's default shell from sh to bash
 # ----------------------------------------------------------------------------
-# Por defecto Docker usa /bin/sh (un shell más limitado y antiguo). Lo
-# cambiamos a bash por si agregamos más instrucciones con sintaxis
-# moderna (arrays, [[ ]], etc.).
+# By default, Docker runs RUN instructions using /bin/sh, a minimal POSIX
+# shell that lacks many bash-specific features (arrays, [[ ]], process
+# substitution, etc.).
+# Setting SHELL to /bin/bash means all subsequent RUN instructions will use
+# bash, giving us access to the full bash syntax covered in BHB Ch.1 and Ch.2.
+# The "-c" flag tells bash to read commands from the string argument.
+# (BHB Ch.1 - Accessing the Bash Shell)
 SHELL ["/bin/bash", "-c"]
 
 
