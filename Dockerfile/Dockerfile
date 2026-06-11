@@ -266,13 +266,27 @@ SHELL ["/bin/bash", "-c"]
 # (BHB Ch.1 - Running Linux Commands)
 WORKDIR /workspaces
 
-# Configuración de Git para el contenedor:
-# - safe.directory *: confía en cualquier repo montado (necesario porque
-#   /workspaces/... tiene un UID distinto al de root dentro del container).
-# - init.defaultBranch main: evita warnings de "master vs main" en git init.
-# - pull.rebase false: merge por defecto al hacer pull (más intuitivo)
-# - git lfs install --system: registra los hooks de LFS globalmente para
-#   que, si un repo los necesita, funcionen sin sorpresas.
+# ----------------------------------------------------------------------------
+# (j) RUN git config --system && git lfs install --system
+# ----------------------------------------------------------------------------
+# These lines configure Git globally for the root user inside the container.
+#
+#   safe.directory '*'
+#     Codespaces mounts /workspaces with a different owner than the container's
+#     root user. Without this, Git refuses to work in those directories.
+#     The '*' wildcard trusts ALL mounted directories. (BHB Ch.1 - Variables)
+#
+#   init.defaultBranch main
+#     Sets "main" as the default branch name for new repos (git init),
+#     avoiding the deprecation warning about "master".
+#
+#   pull.rebase false
+#     When running "git pull", merge instead of rebase. More intuitive
+#     for beginners and avoids accidental history rewrites.
+#
+#   git lfs install --system
+#     Registers Git LFS (Large File Storage) hooks system-wide so that
+#     repos using LFS (for large binary files) work automatically.
 RUN git config --system --add safe.directory '*' \
  && git config --system init.defaultBranch main \
  && git config --system pull.rebase false \
