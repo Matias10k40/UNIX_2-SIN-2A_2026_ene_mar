@@ -32,6 +32,16 @@
 FROM kalilinux/kali-rolling:latest
 
 # ----------------------------------------------------------------------------
+# (b) Image / layer / cache idea — why instruction ORDER matters
+# ----------------------------------------------------------------------------
+# Docker builds images layer by layer, from top to bottom.
+# Each instruction creates one layer; layers are cached individually.
+# If you change a line, Docker rebuilds that layer AND every layer below it.
+# That is why stable instructions (FROM, ENV) go first, and frequently
+# changing ones go last — it keeps builds fast by maximizing cache reuse.
+# (BHB Ch.3 - Deploying Docker Containers)
+
+# ----------------------------------------------------------------------------
 # ENV: variables de entorno permanentes dentro del contenedor
 # ----------------------------------------------------------------------------
 # Las variables de entorno son "ajustes globales" que cualquier programa
