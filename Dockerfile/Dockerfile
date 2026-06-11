@@ -42,27 +42,28 @@ FROM kalilinux/kali-rolling:latest
 # (BHB Ch.3 - Deploying Docker Containers)
 
 # ----------------------------------------------------------------------------
-# ENV: variables de entorno permanentes dentro del contenedor
+# (c) ENV: permanent environment variables inside the container
 # ----------------------------------------------------------------------------
-# Las variables de entorno son "ajustes globales" que cualquier programa
-# del sistema puede leer. Se escriben en MAYÚSCULAS por convención.
+# Environment variables are global settings that any program in the system
+# can read. By convention they are written in UPPERCASE.
+# In bash, you access them with ${VARIABLE_NAME}. (BHB Ch.1 - Checking Environment Variables)
 #
 #   DEBIAN_FRONTEND=noninteractive
-#     Le dice al instalador de paquetes (apt) "no me hagas preguntas
-#     interactivas, asume respuestas por defecto". Sin esto, algunos
-#     paquetes pausarían el build esperando que pulsemos una tecla y se
-#     quedaría colgado para siempre (porque no hay nadie mirando).
+#     Tells the package manager (apt) "do not ask me interactive questions,
+#     assume default answers". Without this, some packages would pause the
+#     build waiting for a keypress — and since nobody is watching, it would
+#     hang forever.
 #
 #   LANG / LC_ALL=es_ES.UTF-8
-#     Configuran idioma y codificación de caracteres. UTF-8 es lo que
-#     permite que acentos, ñ, €, emojis, etc. se muestren bien.
+#     Set the language and character encoding. UTF-8 allows accented letters,
+#     ñ, special symbols, etc. to display correctly in the terminal.
 #
 #   TERM=xterm-256color
-#     Le indica a los programas que la terminal admite 256 colores, para
-#     que vim, nvim, htop, etc. se vean con todos sus colores.
+#     Tells programs that the terminal supports 256 colors, so tools like
+#     vim, nvim, and htop render with their full color schemes.
 #
-# La barra invertida "\" al final de cada línea significa "esto continúa
-# en la línea siguiente". Solo es para legibilidad.
+# The trailing backslash "\" means "this line continues below" — it is
+# purely for readability, not a functional operator. (BHB Ch.1 - Bash Basics)
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
