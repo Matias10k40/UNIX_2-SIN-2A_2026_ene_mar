@@ -364,7 +364,7 @@ RUN cat >> /root/.zshrc <<'EOF'
 # last one takes effect.
 # Codespaces overrides this with its own VS Code integrated terminal,
 # but defining it makes the image usable with plain Docker too.
-# (BHB Ch.1 - Accessing the Bash Shell
+# (BHB Ch.1 - Accessing the Bash Shell)
 CMD ["/bin/zsh"]
 
 # ===== Course prompt =====
