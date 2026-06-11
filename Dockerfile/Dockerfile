@@ -215,7 +215,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # === Human-friendly HTTP client ===
     httpie \
  \
-
  # ----------------------------------------------------------------------------
  # (f) sed + locale-gen — enabling the Spanish locale
  # ----------------------------------------------------------------------------
@@ -353,20 +352,6 @@ RUN cat >> /root/.zshrc <<'EOF'
 # (BHB Ch.1 - Checking Environment Variables, BHB Ch.2 - Bash Customizations)
 RUN cat >> /root/.zshrc <<'EOF'
 
-# ----------------------------------------------------------------------------
-# (m) CMD — the default command when the container starts
-# ----------------------------------------------------------------------------
-# CMD defines what runs when someone starts the container without specifying
-# a command explicitly (e.g., "docker run <image>").
-# Unlike RUN (which executes during BUILD time to modify the image),
-# CMD executes at RUNTIME when the container is launched.
-# Only one CMD is allowed per Dockerfile — if you write multiple, only the
-# last one takes effect.
-# Codespaces overrides this with its own VS Code integrated terminal,
-# but defining it makes the image usable with plain Docker too.
-# (BHB Ch.1 - Accessing the Bash Shell)
-CMD ["/bin/zsh"]
-
 # ===== Course prompt =====
 __set_prompt() {
     local ec=$?
@@ -381,6 +366,16 @@ __set_prompt() {
 precmd() { __set_prompt; }
 EOF
 
-
-
-
+# ----------------------------------------------------------------------------
+# (m) CMD — the default command when the container starts
+# ----------------------------------------------------------------------------
+# CMD defines what runs when someone starts the container without specifying
+# a command explicitly (e.g., "docker run <image>").
+# Unlike RUN (which executes during BUILD time to modify the image),
+# CMD executes at RUNTIME when the container is launched.
+# Only one CMD is allowed per Dockerfile — if you write multiple, only the
+# last one takes effect.
+# Codespaces overrides this with its own VS Code integrated terminal,
+# but defining it makes the image usable with plain Docker too.
+# (BHB Ch.1 - Accessing the Bash Shell)
+CMD ["/bin/zsh"]
