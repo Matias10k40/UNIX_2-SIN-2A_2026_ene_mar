@@ -9,6 +9,13 @@
  grep -o "35.237.4.214" log.txt
 awk -F',' '{print $1}' example_csv.txt
 awk 'NR < 10' log.txt
+# grep searches the log lines that contain that IP.
+grep "42.236.10.117" log.txt
+
+# awk prints the seventh field of each line.
+awk '{print $7}' log.txt
+
+# together: they filter that IP and then extract field 7 from the matching lines.
 grep "42.236.10.117" log.txt | awk '{print $7}'
 awk -F',' '{print $1}' test.csv | grep "example_file"
 awk -F',' '{print $1}' test.csv | grep "example_file" | sort
