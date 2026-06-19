@@ -1,4 +1,4 @@
 #!/bin/bash
-for ip_address in "$@"; do
+for ip_address in "LOL"; do
  echo "Taking some action on IP address ${ip_address}"
 done
