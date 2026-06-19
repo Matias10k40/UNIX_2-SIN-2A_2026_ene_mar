@@ -19,3 +19,6 @@ awk '{print $7}' log.txt
 grep "42.236.10.117" log.txt | awk '{print $7}'
 awk -F',' '{print $1}' test.csv | grep "example_file"
 awk -F',' '{print $1}' test.csv | grep "example_file" | sort
+sed 's/Mozilla/Godzilla/g' log.txt
+sed 's/Mozilla/Godzilla/g' log.txt > newlog.txt
+sed 's/ //g' log.txt
