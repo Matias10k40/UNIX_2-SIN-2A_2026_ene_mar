@@ -7,4 +7,8 @@
  ps | grep -i tty
  grep -v "35.237.4.214" log.txt
  grep -o "35.237.4.214" log.txt
- 
+awk -F',' '{print $1}' example_csv.txt
+awk 'NR < 10' log.txt
+grep "42.236.10.117" log.txt | awk '{print $7}'
+awk -F',' '{print $1}' test.csv | grep "example_file"
+awk -F',' '{print $1}' test.csv | grep "example_file" | sort
